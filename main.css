@@ -3,14 +3,13 @@ body{
   background-size: cover;
 }
 div{
- width:20%;
- margin:2%;
-
+  margin: 2%;
+  float:left;
   text-align: center;
   display:inline-block;
 }
 div.clear{
-  text-align: center;
+  float:left;
   display:inline-block;
   clear:both;
 }
@@ -25,4 +24,3 @@ input[type=submit]{
 input[type=text]{
   float:right;
 }
-
