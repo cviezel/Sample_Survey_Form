@@ -10,7 +10,7 @@ div{
   display:inline-block;
 }
 div.clear{
-  float:left;
+  
   display:inline-block;
   clear:both;
 }
