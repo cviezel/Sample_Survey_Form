@@ -25,3 +25,7 @@ input[type=submit]{
 input[type=text]{
   float:right;
 }
+#wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
