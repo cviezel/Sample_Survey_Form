@@ -3,7 +3,8 @@ body{
   background-size: cover;
 }
 div{
- 
+  position:absolute;
+ margin:2%;
   float:left;
   text-align: center;
   display:inline-block;
