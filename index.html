@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>
+Location Recognition Survey
+</title>
+<link rel="stylesheet" href="main.css"></head>
+<body>
+<b><h1><center>Location Recognition Survey</center></h1></b>
+<p> Given the answers in bold, did you correctly identify these locations?</p>
+<div>
+<image src="https://cdn.getyourguide.com/niwziy2l9cvz/4faNk8qj7WaWqmqAEm8qwS/e027efbb94b2201752c43d3952292c62/san-francisco-golden-gate-bridge-1112x630.jpg"/>
+<h5>
+San Francisco, CA
+</h5>
+<form>
+<select id = "s1">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form></div>
+
+<div>
+<image src="https://res.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_878,q_75,w_1903/v1/clients/boston/66b874f0_48f2_45fc_8d07_005732c5cc5c_0295e791-cf9f-4b9e-ba4e-246c196fe701.jpg"/>
+<h5>
+Boston, MA
+</h5>
+<form>
+<select id = "s2">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form>
+</div>
+
+<div>
+<image src="http://www.ancient-egypt-online.com/images/nile1.jpg" />
+<h5>
+Egypt
+</h5>
+<form>
+<select id = "s3">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form>
+</div>
+
+<div class="clear">
+<image src="http://www.greenland.com/media/4309/deastination-east-greenland.jpg"/>
+<h5>
+Greenland
+</h5>
+<form>
+<select id = "s4">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form>
+</div>
+
+<div>
+<image src="http://blog.ctinnovations.com/wp-content/uploads/2014/11/newhaven_green.png"/>
+<h5>
+New Haven, CT
+</h5>
+<form>
+<select id = "s5">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form>
+</div>
+
+<div>
+<image src="https://c1.staticflickr.com/1/86/247525912_ea80f17559_m.jpg"/>
+<h5>
+Empire State Building
+</h5>
+<form>
+<select id = "s6">
+  <option value="Select">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</form>
+</div>
+
+
+<input type="submit" onclick="submit()"/>
+<input type="text" id="field" placeholder="Participant #"/>
+<input type="text" id="nameField" placeholder="Participant Name"/>
+<script>
+var sub = [s1, s2, s3, s4, s5, s6];
+function submit()
+{
+  var checkCompletedSurvey = true;
+	for (var i = 0; i < sub.length; i++)
+  {
+  	if (sub[i].value == "Select")
+    {
+    	alert("You must answer every question")
+      checkCompletedSurvey = false;
+      break;
+    }
+  }
+  var checkValidID = true;
+    for (var i = 0; i < field.value.length; i++)
+    {
+      if (isNaN(field.value.charAt(i)))
+      {
+        checkValidID = false;
+        break;
+      }
+    }
+    if (checkValidID && field.value.length > 0)
+    {
+      //alert("Id was a number");
+    }
+    else
+    {
+      alert("Id was not a number");
+    }
+    var checkValidName = true;
+    if (nameField.value.length < 1)
+    {
+      checkValidName = false;
+      alert("Must enter a participant name");
+    }
+    if (checkValidID && checkValidName && checkCompletedSurvey)
+    {
+      alert("Completed Survey. Thanks for your input.")
+      var wnd = window.open("", "knownWindowName");
+      wnd.document.write("name: " + nameField.value + "<br>" + "id: " + field.value + "<br>");
+      for (var i = 0; i < sub.length; i++)
+      {
+        wnd.document.write((i + 1) + ": " + sub[i].value + "<br>");
+      }
+      wnd.document.write("<br>");
+    }
+  }
+</script>
+</html>
